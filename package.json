@@ -1,0 +1,20 @@
+{
+  "name": "my-books-bookmarker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.1.0",
+    "@uirouter/core": "^6.1.0",
+    "angular": "^1.8.0",
+    "angular-animate": "^1.7.9"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
+  }
+}
