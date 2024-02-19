@@ -1,3 +1,5 @@
+'use strict';
+
 import 'angular-animate';
 import 'ngstorage';
 //import elementsModule from './elements.module';

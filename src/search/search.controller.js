@@ -1,32 +1,34 @@
+'use strict';
+
 
 class SearchController {
-  constructor($stateParams, $http, $rootScope, $state ) {
+  constructor($stateParams, $http, $state ) {
     this.query = $stateParams.query || "";
     this.page = $stateParams.page || 0;
     this.maxResults = 40;
 
     this.startIndex = (this.page ) * this.maxResults;
     this._http = $http;
-    this._rootScope = $rootScope;
-    this.$state = $state;
+    this._state = $state;
     this.searchResults = {};
     this.totalItems = 0;
+    this.itemsPerPage = this.maxResults = 10;
     this.currentPage = Number(this.page) + 1;
   }
 
   searchForQuery () {
     console.log("SearchController.searchForQuery");
     console.log("query", this.query); 
-    this.$state.go("searchq", { query: this.query, page: 0 });
+    this._state.go("searchq", { query: this.query, page: 0 });
   };
 
   serchPage (page) {
-    this.$state.go("searchq", { query: this.query, page: page });
+    this._state.go("searchq", { query: this.query, page: page });
   }
 
   pageChanged($event){
     console.log("pageChanged sdad", $event);
-    this.$state.go("searchq", { query: this.query, page: $event.page - 1 });
+    this._state.go("searchq", { query: this.query, page: $event.page - 1 });
   }
 
   $onInit () {
@@ -44,7 +46,9 @@ class SearchController {
     }
   };
 }
-SearchController.inject = ["$stateParams", "$http", "$rootScope", "$state"];
+SearchController.inject = ["$stateParams", "$http", "$state"];
+
+
 angular
   .module("myApp")
   .controller("SearchController", SearchController);

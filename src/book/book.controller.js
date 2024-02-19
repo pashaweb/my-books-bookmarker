@@ -1,3 +1,5 @@
+'use strict';
+
 class Book {
   constructor($stateParams, $http, FavoritesService) {
     this.bookId = $stateParams.bookId;

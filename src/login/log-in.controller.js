@@ -1,3 +1,6 @@
+
+'use strict';
+  
 class LogInController {
   constructor($state, $log, $rootScope) {
     this.$state = $state;

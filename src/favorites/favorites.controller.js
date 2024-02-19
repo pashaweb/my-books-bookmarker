@@ -1,3 +1,5 @@
+'use strict';
+
 class Favorites{
     constructor(FavoritesService){
         this.FavoritesService = FavoritesService;

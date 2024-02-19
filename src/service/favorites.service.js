@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("myApp").service("FavoritesService", [
   "$localStorage",
   function ($localStorage) {
@@ -19,6 +21,9 @@ angular.module("myApp").service("FavoritesService", [
     };
 
     this.isFaoriteBook = function (bookId) {
+      if (!$localStorage.favorites) {
+        return false;
+      };
       return $localStorage.favorites.some((book) => book.id === bookId);
     }
 
