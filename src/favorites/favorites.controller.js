@@ -1,24 +1,9 @@
 'use strict';
 
-class Favorites{
-    constructor(FavoritesService){
-        this.FavoritesService = FavoritesService;
-        this.favorites = [];
-    }
-    addFavorite(favorite){
-        this.favorites.push(favorite);
-    }
-    removeFavorite(favorite){
-        this.favorites = this.favorites.filter(fav => fav !== favorite);
-    }
-
-    $onInit(){
+angular.module("myApp").controller("FavoritesController",['FavoritesService', function(FavoritesService){
+    this.FavoritesService = FavoritesService;
+    this.favorites = [];
+    this.$onInit = function(){
         this.favorites = this.FavoritesService.getFavorites();
-        console.log(this.favorites);
     }
-}
-
-
-Favorites.inject = ["FavoritesService"];
-
-angular.module("myApp").controller("FavoritesController", Favorites);
+}]);

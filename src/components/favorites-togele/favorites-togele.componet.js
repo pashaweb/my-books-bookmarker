@@ -1,25 +1,5 @@
 'use strict';
 
-class FavoritesTogeleController {
-  constructor(FavoritesService) {
-    this.isFavorite = false;
-    this.FavoritesService = FavoritesService;
-  }
-  toggle(book) {
-    this.isFavorite = !this.isFavorite;
-    if (this.isFavorite) {
-      this.FavoritesService.add(this.book);
-    } else {
-      this.FavoritesService.remove(this.book);
-    }
-  }
-
-  $onInit() {
-    this.isFavorite = this.FavoritesService.isFaoriteBook(this.book.id);
-  }
-}
-
-FavoritesTogeleController.inject = ["FavoritesService"];
 
 angular.module("myApp").component("favoritesTogele", {
   template: `
@@ -28,7 +8,26 @@ angular.module("myApp").component("favoritesTogele", {
     <i ng-if="!$ctrl.isFavorite" class="fa fa-heart-o"></i>
     </button>
     `,
-  controller: FavoritesTogeleController,
+  controller:["FavoritesService", "$scope", function(FavoritesService) {
+    this.isFavorite = false;
+    this.FavoritesService = FavoritesService;
+
+    this.toggle = function() {
+
+      this.isFavorite = !this.isFavorite;
+      if (this.isFavorite) {
+        this.FavoritesService.add(this.book);
+      } else {
+        this.FavoritesService.remove(this.book);
+      }
+    }
+
+    this.$onInit = function() {
+      this.isFavorite = this.FavoritesService.isFaoriteBook(this.book.id);
+    }
+
+
+  }],
   bindings: {
     book: "<",
   },

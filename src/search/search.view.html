@@ -1,7 +1,7 @@
-<!-- <navigation></navigation> -->
+<navigation></navigation>
 
 <h1>Search</h1>
-<form >
+<form ng-submit="$ctrl.searchForQuery()" >
   <div class="form-group">
     <label for="search">Searc for Books</label>
     <input
@@ -23,8 +23,16 @@
   on-page-change="$ctrl.pageChanged($event)"
   class="pagination-sm" 
   ></pagination>
-
+{{ $ctrl.books.length }}
   <div class="fake-masonry">
+    <!-- <div class="card" ng-repeat="book in $ctrl.books">
+      <div class="card-body">
+        <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{book.volumeInfo.authors}}</h6>
+        <p class="card-text">{{book.volumeInfo.description}}</p>
+        <a href="#!/book/{{book.id}}" class="card-link">More Info</a>
+      </div>
+    </div> -->
     <book-card ng-repeat="book in $ctrl.books" book="book" class="card">
     </book-card>
   </div>
