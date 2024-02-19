@@ -1,0 +1,12 @@
+<navigation></navigation>
+
+  <div>
+    <h1>Favorites</h1>
+    <div class="fake-masonry">
+        <book-card ng-repeat="book in $ctrl.favorites" book="book" class="card">
+        </book-card>
+    </div>
+    <div ng-if="$ctrl.books.length===0">
+        <h2>No favorite books found</h2>
+    </div>
+</div>

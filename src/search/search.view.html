@@ -1,0 +1,37 @@
+<navigation></navigation>
+
+<h1>Search</h1>
+<form ng-submit="$ctrl.searchForQuery()">
+  <div class="form-group">
+    <label for="search">Searc for Books</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search"
+      placeholder="Search"
+      ng-model="$ctrl.query"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<div ng-if="$ctrl.books.length>0">
+  <pagination
+  total-items="$ctrl.totalItems"
+  current-page="$ctrl.currentPage"
+  items-per-page="$ctrl.maxResults"
+  on-page-change="$ctrl.pageChanged($event)"
+  class="pagination-sm" 
+  ></pagination>
+
+  <div class="fake-masonry">
+    <book-card ng-repeat="book in $ctrl.books" book="book" class="card">
+    </book-card>
+  </div>
+
+
+
+</div>
+<div ng-if="$ctrl.books.length===0 && $ctrl.query">
+  <h2>No books found for "{{$ctrl.query}}"</h2>
+</div>

@@ -1,0 +1,22 @@
+
+<navigation></navigation>
+<div>
+  <h1>{{$ctrl.book.volumeInfo.title}}</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <img
+        ng-src="{{$ctrl.book.volumeInfo.imageLinks.thumbnail}}"
+        alt="{{$ctrl.book.volumeInfo.title}}"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col-md-8">
+      <h2>{{$ctrl.book.volumeInfo.title}}</h2>
+      <h3>{{$ctrl.book.volumeInfo.authors.join(', ')}}</h3>
+      <p>{{$ctrl.book.volumeInfo.description}}</p>
+      <a href="{{$ctrl.book.volumeInfo.previewLink}}" target="_blank" >Preview</a>
+      <br />
+        <favorites-togele ng-if="$ctrl.book" book="$ctrl.book"></favorites-togele>
+    </div>
+  </div>
+</div>

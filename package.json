@@ -12,7 +12,8 @@
     "@uirouter/angularjs": "^1.1.0",
     "@uirouter/core": "^6.1.0",
     "angular": "^1.8.0",
-    "angular-animate": "^1.7.9"
+    "angular-animate": "^1.7.9",
+    "ngstorage": "^0.3.11"
   },
   "devDependencies": {
     "vite": "^5.1.0"

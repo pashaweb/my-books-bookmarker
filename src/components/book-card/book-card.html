@@ -1,0 +1,13 @@
+
+    <img class="card-img-top" ng-src="{{$ctrl.book.volumeInfo.imageLinks.thumbnail}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{$ctrl.book.volumeInfo.title}}</h5>
+        <p class="card-author">Authors: {{$ctrl.book.volumeInfo.authors.join(', ')}}</p>
+        <p class="card-description">{{$ctrl.book.volumeInfo.description}}</p>
+        <p>
+            <a href="/#!/book/{{$ctrl.book.id}}" >More Info</a>
+        </p>
+        <favorites-togele book="$ctrl.book"></favorites-togele>
+        
+      
+    </div>
