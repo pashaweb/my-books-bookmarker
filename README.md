@@ -1,15 +1,12 @@
-# finmid-home-project
-# React TypeScript with Vite
+# PROFTIT Coding Challenge
+# AngularJS with Vite
 
-This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) boilerplate built with [Vite](https://vitejs.dev).
+This is a [AngularJS](https://angularjs.org/) built with [Vite](https://vitejs.dev).
 
 ## What's inside?
 
-- [ReactJS](https://reactjs.org)
+
 - [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
 
 ## Getting started
 
@@ -28,7 +25,7 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
    npm install
    ```
 
-5. Start dev server with hot reload at http://localhost:8080.
+5. Start dev server with hot reload at http://localhost:5173.
    ```bash
    yarn dev
    ```
@@ -52,13 +49,6 @@ yarn build
 ```bash
 yarn preview
 ```
-
-### Test commands
-
-- Run unit tests and watch
-  ```bash
-  yarn test
-  ```
 
 ## License
 
