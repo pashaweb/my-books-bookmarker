@@ -23,7 +23,7 @@
   on-page-change="$ctrl.pageChanged($event)"
   class="pagination-sm" 
   ></pagination>
-{{ $ctrl.books.length }}
+
   <div class="fake-masonry">
     <!-- <div class="card" ng-repeat="book in $ctrl.books">
       <div class="card-body">
@@ -36,8 +36,6 @@
     <book-card ng-repeat="book in $ctrl.books" book="book" class="card">
     </book-card>
   </div>
-
-
 
 </div>
 <div ng-if="$ctrl.books.length===0 && $ctrl.query">
